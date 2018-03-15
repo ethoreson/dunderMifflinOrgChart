@@ -16,7 +16,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module EmployeechartApi
+module RhabitApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
@@ -29,12 +29,5 @@ module EmployeechartApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-
-    config.middleware.insert_before 0, Rack::Cors do
-        allow do
-            origins '*'
-            resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
-        end
-    end
   end
 end

@@ -1,5 +1,4 @@
-class EmployeesController < ActionController::API
-	# helper_method :displayHierarchy
+class EmployeesController < ApplicationController
 
 	def index
 		@employee = Employee.find(1)

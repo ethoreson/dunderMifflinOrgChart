@@ -12,7 +12,7 @@ class HierarchyMap extends Component {
 		super(props)
 		this.state = {
 			employees: [],
-			editingEmployeeId: null,
+			editingEmployeeId: null
 		}
 	}
 

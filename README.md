@@ -7,7 +7,7 @@ Ctrl + T // Cmnd + T
 In the new tab:
 
 ```
-cd employeechart-api
+cd rhabit-api
 
 rails db:migrate
 

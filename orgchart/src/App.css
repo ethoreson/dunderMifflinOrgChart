@@ -1,16 +1,17 @@
 .header {
-	background-color: #ddd;
+	background-color: #fff;
 	font-size: 20px;
 	color: #343433;
 	text-align: center;
+	border-bottom: 2px solid black;
 }
 
-.logo {
-	height: 60%;
-	width: auto;
+.title {
+	font-size: 40px;
 }
 
 .chart {
+	background-color: #D8FBDD;
 	height: 75px;
 	width: 340px;
 	margin: 15px;
@@ -58,4 +59,17 @@
 
 .chart:hover .retireButton {
 	visibility: visible;
+}
+
+.formClass {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid grey;
+	background-color: #D8FBF8;
+}
+
+.emp {
+	height: 100px;
+	width: 400px;
+	background-color: red;
 }

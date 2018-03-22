@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 import axios from 'axios'
 import Employee from './Employee'
@@ -12,7 +13,8 @@ class HierarchyMap extends Component {
 		super(props)
 		this.state = {
 			employees: [],
-			editingEmployeeId: null
+			editingEmployeeId: null,
+			currentManager: 1
 		}
 	}
 
@@ -44,8 +46,6 @@ componentDidMount() {
   })
   .catch(error => console.log(error))
 }
-
-
 
 hireNewEmployee = () => {
 	axios.post(
@@ -91,10 +91,23 @@ retireEmployee = (id) => {
 	.catch(error => console.log(error))
 }
 
-
+handleChange = (event) => {
+	this.setState({currentManager: event.target.value})
+	const element = <h2>Direct Reports:</h2>
+	ReactDOM.render(element, document.getElementById('directReportsHeader'))
+	console.log(this.state.currentManager)
+}
 
 render() {
+
+	const employees = this.state.employees
+	const namesList = employees.map(name => {
 		return (
+			<option key={name.id} value={name.id}>{name.first_name} {name.last_name}</option>
+		)
+	})
+
+	return (
 			<div>
 				{this.state.employees.map((employee) => {
 					if(this.state.editingEmployeeId === employee.id) {
@@ -106,9 +119,22 @@ render() {
 				<button className="hireEmployee" onClick={this.hireNewEmployee}>
 					Hire Employee
 				</button>
-				<span className="confirmation">
-					{this.state.notification}
-				</span>
+				<div className="formClass">
+					<h2>Select a manager to see their direct reports:</h2>
+					<form className="findDirectReportsForm" onSubmit={this.handleSubmit}>
+						<select name="emp" value={this.state.currentManager} onChange={this.handleChange}>
+							{namesList}
+						</select>
+					</form>
+				<div id="directReportsHeader">
+				</div>
+				</div>
+
+				{this.state.employees.map((employee) => {
+					 if(employee.manager_id == this.state.currentManager) {
+					 	return(<Employee employee={employee} key={employee.id} />)
+					 }
+				})}
 			</div>
 		);
 	}

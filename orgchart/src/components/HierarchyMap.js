@@ -5,10 +5,10 @@ import Employee from './Employee'
 import update from 'immutability-helper'
 import EmployeeForm from './EmployeeForm'
 
-// @class HierarchyMap
-// @constructor
-// @element state:
-// @contents {employees(Array), editingEmployeeId(Int), currentManager(Int)}
+/**
+* @class HierarchyMap
+* @constructor
+*/
 
 class HierarchyMap extends Component {
 
@@ -21,8 +21,11 @@ class HierarchyMap extends Component {
 		}
 	}
 
-// @method collectEmployees
-// @return GET request from employees API. Shovels all employee objects into this.state's 'employees' array.
+/**
+* GET request from employees API. Shovels all employee objects into this.state's 'employees' array.
+* @method collectEmployees
+* @return {Object} 
+*/
 
 collectEmployees = (employee) => {
 	axios.get(`http://localhost:3001/employees.json`)
@@ -104,6 +107,11 @@ handleChange = (event) => {
 	console.log(this.state.currentManager)
 }
 
+/**
+* @property HierarchyMapDOM
+* @type HTMLElement
+*/
+
 render() {
 
 	const employees = this.state.employees
@@ -112,9 +120,9 @@ render() {
 			<option key={name.id} value={name.id}>{name.first_name} {name.last_name}</option>
 		)
 	})
-
 	return (
 			<div>
+				<div className="gridContainer">
 				{this.state.employees.map((employee) => {
 					if(this.state.editingEmployeeId === employee.id) {
 						return(<EmployeeForm employee={employee} key={employee.id} updateEmployee={this.updateEmployee} titleRef= {input => this.first_name = input} resetConfirmation={this.resetConfirmation}/>)
@@ -122,6 +130,7 @@ render() {
 						return (<Employee employee={employee} key={employee.id} onClick={this.enableEditing} onDelete={this.retireEmployee} />)
 					}		
 				})}
+				</div>
 				<button className="hireEmployee" onClick={this.hireNewEmployee}>
 					Hire Employee
 				</button>
@@ -135,12 +144,13 @@ render() {
 				<div id="directReportsHeader">
 				</div>
 				</div>
-
+				<div className="directReportsDisplay">
 				{this.state.employees.map((employee) => {
 					 if(employee.manager_id == this.state.currentManager) {
 					 	return(<Employee employee={employee} key={employee.id} />)
 					 }
 				})}
+				</div>
 			</div>
 		);
 	}

@@ -1,9 +1,77 @@
 {
     "project": {},
-    "files": {},
-    "modules": {},
-    "classes": {},
+    "files": {
+        "orgchart/src/components/HierarchyMap.js": {
+            "name": "orgchart/src/components/HierarchyMap.js",
+            "modules": {},
+            "classes": {
+                "HierarchyMap": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "orgchart/src/App.js": {
+            "name": "orgchart/src/App.js",
+            "modules": {
+                "Dunder Mifflin Org Chart": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Dunder Mifflin Org Chart": {
+            "name": "Dunder Mifflin Org Chart",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "HierarchyMap": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "orgchart/src/components/HierarchyMap.js",
+            "line": 8
+        }
+    },
+    "classes": {
+        "HierarchyMap": {
+            "name": "HierarchyMap",
+            "shortname": "HierarchyMap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Dunder Mifflin Org Chart",
+            "file": "orgchart/src/components/HierarchyMap.js",
+            "line": 8,
+            "is_constructor": 1
+        }
+    },
     "elements": {},
-    "classitems": [],
+    "classitems": [
+        {
+            "file": "orgchart/src/components/HierarchyMap.js",
+            "line": 24,
+            "description": "GET request from employees API. Shovels all employee objects into this.state's 'employees' array.",
+            "itemtype": "method",
+            "name": "collectEmployees",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "HierarchyMap"
+        },
+        {
+            "file": "orgchart/src/components/HierarchyMap.js",
+            "line": 110,
+            "itemtype": "property",
+            "name": "HierarchyMapDOM",
+            "type": "HTMLElement",
+            "class": "HierarchyMap"
+        }
+    ],
     "warnings": []
 }

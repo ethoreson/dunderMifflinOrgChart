@@ -1,69 +1,69 @@
 employees = Employee.create(
 	[
 		{
-			first_name: "Dade",
-			last_name: "Murphy",
+			first_name: "Wallace",
+			last_name: "David",
 			title: "CEO",
 			manager_id: nil
 		},
 		{
-			first_name: "Kate",
-			last_name: "Libby",
-			title: "CTO",
+			first_name: "Michael",
+			last_name: "Scott",
+			title: "Regional Manager Scranton",
 			manager_id: 1
 		},
 		{
-			first_name: "Edward",
-			last_name: "Vedder",
-			title: "CFO",
+			first_name: "Jan",
+			last_name: "Levinson",
+			title: "VP Northeast Sales",
 			manager_id: 1
 		},
 		{
-			first_name: "Margo",
-			last_name: "Wallace",
-			title: "VP of Public Relations",
+			first_name: "Dwight",
+			last_name: "Schrute",
+			title: "Assistant to the Regional Manager",
 			manager_id: 1
 		},
 		{
-			first_name: "Eugene",
-			last_name: "Belfort",
-			title: "VP of Engineering",
+			first_name: "Jim",
+			last_name: "Halpert",
+			title: "Sales",
 			manager_id: 2
 		},
 		{
-			first_name: "Richard",
-			last_name: "Gill",
-			title: "Public Relations Manager",
+			first_name: "Angela",
+			last_name: "Martin",
+			title: "Head of Accounting",
 			manager_id: 4
 		},
 		{
-			first_name: "Emmanuel",
-			last_name: "Goldstein",
-			title: "Lead Software Engineer",
+			first_name: "Oscar",
+			last_name: "Martinez",
+			title: "Accountant",
 			manager_id: 5
 		},
 		{
-			first_name: "Paul",
-			last_name: "Cook",
-			title: "Software Engineer",
+			first_name: "Pam",
+			last_name: "Beasley",
+			title: "Secretary",
 			manager_id: 5
 		},
 		{
-			first_name: "Joey",
-			last_name: "Pardella",
-			title: "Junior Software Engineer",
+			first_name: "Kelly",
+			last_name: "Kapour",
+			title: "Head of Customer Service",
 			manager_id: 8
 		},
 		{
-			first_name: "Agnes",
-			last_name: "Pardella",
-			title: "Project Manager",
+			first_name: "Ryan",
+			last_name: "Howard",
+			title: "Temp",
 			manager_id: 4
 		},
 		{
-			first_name: "Ramon",
-			last_name: "Sanches",
-			title: "Software Engineer",
+			first_name: "Creed",
+			last_name: "Bratton",
+			title: "Quality Assurance",
 			manager_id: 8
 		}
 	]

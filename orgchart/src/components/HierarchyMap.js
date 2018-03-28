@@ -4,8 +4,11 @@ import axios from 'axios'
 import Employee from './Employee'
 import update from 'immutability-helper'
 import EmployeeForm from './EmployeeForm'
-// import DirectReportsForm from './DirectReportsForm'
-// import DirectReports from './DirectReports'
+
+// @class HierarchyMap
+// @constructor
+// @element state:
+// @contents {employees(Array), editingEmployeeId(Int), currentManager(Int)}
 
 class HierarchyMap extends Component {
 
@@ -17,6 +20,9 @@ class HierarchyMap extends Component {
 			currentManager: 1
 		}
 	}
+
+// @method collectEmployees
+// @return GET request from employees API. Shovels all employee objects into this.state's 'employees' array.
 
 collectEmployees = (employee) => {
 	axios.get(`http://localhost:3001/employees.json`)
